@@ -20,7 +20,7 @@ def isfloat(value):
         return False
 
 
-s1, s2 = input('Введите границы числового( больше или равно 0) или буквенного диапазона:\n').split(' ')
+s1, s2 = input('Введите границы числового или буквенного диапазона:\n').split(' ')
 if isfloat(s1) and isfloat(s2):
     if float(s1) < float(s2):
         left = float(s1)
