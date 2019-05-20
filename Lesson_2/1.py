@@ -9,3 +9,33 @@
 Также сообщать пользователю о невозможности деления на ноль,
 если он ввел 0 в качестве делителя.
 """
+
+# рекурсия
+def operator():
+    x = float(input('Введите первое число\n'))
+    y = float(input('Введите второе число\n'))
+    operand = input('Введите символ операции\n')
+    if operand == '0':
+        return print('Выход')
+    if y == 0 and operand == '/':
+        print('Ошибка деления на 0')
+        return operator()
+    if not operand in ['+', '-', '*', '/']:
+        print('Неверный операнд\n')
+        return operator()
+    if operand == '+':
+        print(x + y)
+        return operator()
+    if operand == '*':
+        print(x * y)
+        return operator()
+    if operand == '-':
+        print(x - y)
+        return operator()
+    if operand == '/':
+        print(x / y)
+        return operator()
+
+
+
+operator()
