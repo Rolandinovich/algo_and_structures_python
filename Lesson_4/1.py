@@ -3,13 +3,12 @@
 разработанных в рамках домашнего задания первых трех уроков.
 Примечание: попробуйте написать несколько реализаций алгоритма и сравнить их.
 """
-
-
-# рекурсия
+import cProfile
 import timeit
 
 n = 100
-
+# timeit
+# рекурсия
 def test_hypothesis(n, sum=1, cur_num=1):
     if n == 1:
         print('Утверждение верно')
@@ -47,3 +46,7 @@ def test_hypothesis_in_for(n):
 
 print(timeit.timeit("test_hypothesis_in_for(n)", setup="from __main__ import test_hypothesis_in_for; n=100",number=100))
 #   0.004665299999999983
+
+# cProfile
+
+cProfile.run('max_sum()')
