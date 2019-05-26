@@ -7,6 +7,8 @@ import cProfile
 import timeit
 
 n = 100
+
+
 # timeit
 # рекурсия
 def test_hypothesis(n, sum=1, cur_num=1):
@@ -33,7 +35,9 @@ def test_hypothesis(n, sum=1, cur_num=1):
             return (cur_num, result)
 
 
-print(timeit.timeit("test_hypothesis(n)", setup="from __main__ import test_hypothesis; n=100",number=100))
+print(timeit.timeit("test_hypothesis(n)", setup="from __main__ import test_hypothesis; n=100", number=100))
+
+
 #    0.11423819999999998
 # цикл
 def test_hypothesis_in_for(n):
@@ -44,9 +48,11 @@ def test_hypothesis_in_for(n):
         result[i] = {sum == n * (n + 1) / 2}
     return result
 
-print(timeit.timeit("test_hypothesis_in_for(n)", setup="from __main__ import test_hypothesis_in_for; n=100",number=100))
+
+print(
+    timeit.timeit("test_hypothesis_in_for(n)", setup="from __main__ import test_hypothesis_in_for; n=100", number=100))
 #   0.004665299999999983
 
 # cProfile
 
-cProfile.run('max_sum()')
+cProfile.run('')
