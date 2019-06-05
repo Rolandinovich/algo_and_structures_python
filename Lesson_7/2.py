@@ -3,7 +3,7 @@
 заданный случайными числами на промежутке [0; 50). Выведите на экран исходный
 и отсортированный массивы.
 """
-#http://py-algorithm.blogspot.com/2012/01/blog-post.html
+# http://py-algorithm.blogspot.com/2012/01/blog-post.html
 import random
 
 array = [random.random() * 50 for _ in range(20)]
