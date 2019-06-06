@@ -3,7 +3,6 @@
 заданный случайными числами на промежутке [0; 50). Выведите на экран исходный
 и отсортированный массивы.
 """
-# http://py-algorithm.blogspot.com/2012/01/blog-post.html
 import random
 
 array = [random.random() * 50 for _ in range(20)]
@@ -35,7 +34,10 @@ def MergerSort(a):
         g = 0
         while g < len(a):  # группы
             z = g + k + k - 1  # последний эл-т группы
-            r = z if z < len(a) else len(a) - 1  # последняя группа
+            if z < len(a):  # последняя группа
+                r = z
+            else:
+                r = len(a) - 1
             MergerGroup(a, g, g + k - 1, r)  # слияние
             g += 2 * k
         k *= 2

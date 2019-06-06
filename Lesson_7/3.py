@@ -18,15 +18,7 @@ print(array)
 import random
 
 
-def quickselect_median(l, pivot_fn=random.choice):
-    if len(l) % 2 == 1:
-        return quickselect(l, len(l) / 2, pivot_fn)
-    else:
-        return 0.5 * (quickselect(l, len(l) / 2 - 1, pivot_fn) +
-                      quickselect(l, len(l) / 2, pivot_fn))
-
-
-def quickselect(l, k, pivot_fn=random.choice):
+def quickselect_median(l, k, pivot_fn=random.choice):
     """
     Выбираем k-тый элемент в списке l (с нулевой базой)
     :param l: список числовых данных
@@ -45,12 +37,13 @@ def quickselect(l, k, pivot_fn=random.choice):
     pivots = [el for el in l if el == pivot]
 
     if k < len(lows):
-        return quickselect(lows, k, pivot_fn)
+        return quickselect_median(lows, k, pivot_fn)
     elif k < len(lows) + len(pivots):
         # Нам повезло и мы угадали медиану
         return pivots[0]
     else:
-        return quickselect(highs, k - len(lows) - len(pivots), pivot_fn)
+        return quickselect_median(highs, k - len(lows) - len(pivots), pivot_fn)
 
-print(quickselect_median(array))
+
+print(quickselect_median(array, m))
 print(sorted(array)[m])
