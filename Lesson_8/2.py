@@ -4,9 +4,6 @@
 Требуется найти количество различных подстрок в этой строке.
 """
 
-# https://pastebin.com/zaEiu1t2
-# http://www.e-maxx-ru.1gb.ru/algo/string_hashes
-
 S = str(input("Введите строку S: "))
 
 print("Строка \'%s\' имеет длину %d сиволов." % (S, len(S)))
